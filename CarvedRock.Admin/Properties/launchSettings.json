@@ -1,0 +1,23 @@
+﻿{  
+  "profiles": {    
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7279",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "hotreloadprofile": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+          "ASPNETCORE_ENVIRONMENT": "Development",
+          "Key": "Value"
+      },
+      "applicationUrl": "https://localhost:7279",
+      "hotReloadProfile": "aspnetcore"
+    }
+  }
+}

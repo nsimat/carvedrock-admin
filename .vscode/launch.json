@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C#: CarvedRock.Admin",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\CarvedRock.Admin\\CarvedRock.Admin.csproj",
+            "launchConfigurationId": "TargetFramework=;https"
+        }
+    ]
+}
