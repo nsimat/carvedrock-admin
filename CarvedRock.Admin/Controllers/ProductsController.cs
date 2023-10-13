@@ -10,6 +10,17 @@ public class ProductsController : Controller
     public ProductsController()
     {
         Products = GetSampleProducts();
+    }    
+
+    public IActionResult Index()
+    {
+        return View(Products);
+    }
+
+    public IActionResult Details(int id)
+    {
+        var product = Products.Find(p => p.Id == id);
+        return product == null ? NotFound() : View(product);
     }
 
     private List<ProductModel>? GetSampleProducts()
@@ -25,10 +36,5 @@ public class ProductsController : Controller
             new ProductModel {Id = 4, Name = "Basecamp", Price = 249.99M, IsActive = true,
                 Description = "Great insulation and plenty of room for 2 in this spacious but highly-portable tent."},
         };
-    }
-
-    public IActionResult Index()
-    {
-        return View(Products);
     }
 }
