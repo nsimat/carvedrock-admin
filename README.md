@@ -22,7 +22,7 @@ This project is about building a web application for a fictional company named *
 ## Documentation References
 
 * [.NET CLI (`dotnet` command)](https://docs.microsoft.com/en-us/dotnet//core/tools)
-* [ASP.NET Core MVC 7](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-7.0
+* [ASP.NET Core MVC 7](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-7.0)
 
 
 
