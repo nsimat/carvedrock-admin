@@ -69,7 +69,7 @@ public class ProductsController : Controller
     // To protect from overposting attacks, enable the specific properties you want to bind to.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, ProductModel product)
+    public async Task<IActionResult> Edit(int id,[Bind("Id, Name, Description, Price, IsActive")] ProductModel product)
     {
         if (id != product.Id) return NotFound();
 
