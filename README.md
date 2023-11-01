@@ -23,6 +23,15 @@ This project is about building a web application for a fictional company named *
 
 * [.NET CLI (`dotnet` command)](https://docs.microsoft.com/en-us/dotnet//core/tools)
 * [ASP.NET Core MVC 7](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-7.0)
+*  **User Interface**
+   * [Tag Helpers](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/?view=aspnetcore-7.0)
+   * [Razor Syntax](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=apnetcore-7.0)
+   * [Validations](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation)
+*  **Data / Entity Framework (EF) Core**
+   * [Entity Framework](https://docs.microsoft.com/en-us/ef/core)
+   * [Database Providers](https://docs.microsoft.com/en-us/ef/core/providers/?tabs=dotnet-core-cli)
+   * [Migrations](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations)
+  
 
 
 
