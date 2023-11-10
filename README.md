@@ -17,6 +17,7 @@ This project is about building a web application for a fictional company named *
 * **Entity Framework (EF) Core 7** is used with SQLite for database.
 * Basic CRUD operations are supported on Products.
 * Repository classes are used with **Dependency Injection (DI)** for testability support.
+* Entity Product has a related entity, the Category, with navigation property.
 * **Bootstrap 5** is used for styling the web application.
 
 ## Documentation References
@@ -26,11 +27,12 @@ This project is about building a web application for a fictional company named *
 *  **User Interface**
    * [Tag Helpers](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/?view=aspnetcore-7.0)
    * [Razor Syntax](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=apnetcore-7.0)
-   * [Validations](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation)
+   * [Validation and Data Annotations](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation)
 *  **Data / Entity Framework (EF) Core**
    * [Entity Framework](https://docs.microsoft.com/en-us/ef/core)
    * [Database Providers](https://docs.microsoft.com/en-us/ef/core/providers/?tabs=dotnet-core-cli)
    * [Migrations](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations)
+   * [Relationships](https://docs.microsoft.com/en-us/ef/core/modeling/relationships)
   
 
 
