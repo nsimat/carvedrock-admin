@@ -17,6 +17,11 @@ public class CarvedRockRepository : ICarvedRockRepository
         return product; // will have an updated ID value?
     }
 
+    public async Task<List<Category>> GetAllCategoriesAsync()
+    {
+        return await _productDbContext.Categories.ToListAsync();
+    }
+
     public async Task<List<Product>> GetAllProductsAsync()
     {
         return await _productDbContext.Products
