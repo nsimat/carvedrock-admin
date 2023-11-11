@@ -43,7 +43,7 @@ public class ProductsController : Controller
     // More details on https://go.microsoft.com/fwlink/?LinkId=317598
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id, Name, Description, Price, IsActive")] ProductModel product)
+    public async Task<IActionResult> Create(ProductModel product)
     {
         if (ModelState.IsValid)
         {
@@ -78,7 +78,7 @@ public class ProductsController : Controller
     // To protect from overposting attacks, enable the specific properties you want to bind to.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id,[Bind("Id, Name, Description, Price, IsActive")] ProductModel product)
+    public async Task<IActionResult> Edit(int id, ProductModel product)
     {
         if (id != product.Id) return NotFound();
 
