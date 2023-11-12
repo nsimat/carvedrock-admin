@@ -70,7 +70,7 @@ public class ProductsController : Controller
             return View("NotFound");
         }
         
-
+        await _logic.GetAvailableCategories(productModel);
         return View(productModel);
     }
 
@@ -88,6 +88,7 @@ public class ProductsController : Controller
             return RedirectToAction(nameof(Index));
         }
 
+        await _logic.GetAvailableCategories(product);
         return View(product);
     }
 
