@@ -45,4 +45,6 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.UseRequestLocalization("en-UY", "fr-FR");
+
 app.Run();
