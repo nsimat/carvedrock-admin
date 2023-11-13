@@ -1,5 +1,6 @@
 using CarvedRock.Admin.Models;
 using CarvedRock.Admin.Repository;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CarvedRock.Admin.Logic;
@@ -7,14 +8,17 @@ namespace CarvedRock.Admin.Logic;
 public class ProductLogic : IProductLogic
 {
     private readonly ICarvedRockRepository _repository;
+    private readonly IValidator<ProductModel> _validator;
 
-    public ProductLogic(ICarvedRockRepository repository)
+    public ProductLogic(ICarvedRockRepository repository, IValidator<ProductModel> validator)
     {
         _repository = repository;
+        _validator = validator;
     }
 
     public async Task AddNewProduct(ProductModel productToAdd)
     {
+        await _validator.ValidateAndThrowAsync(productToAdd);
         var productToSave = productToAdd.ToProduct();
         await _repository.AddProductAsync(productToSave);
     }

@@ -1,6 +1,7 @@
 using CarvedRock.Admin.Data;
 using CarvedRock.Admin.Logic;
 using CarvedRock.Admin.Repository;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddScoped<ICarvedRockRepository, CarvedRockRepository>();
 builder.Services.AddScoped<IProductLogic, ProductLogic>();
 
 builder.Services.AddDbContext<ProductDbContext>();
+builder.Services.AddValidatorsFromAssemblyContaining<ProductValidator>();
 
 var app = builder.Build();
 

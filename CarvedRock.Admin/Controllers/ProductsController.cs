@@ -1,5 +1,8 @@
 using CarvedRock.Admin.Logic;
 using CarvedRock.Admin.Models;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarvedRock.Admin.Controllers;
@@ -45,13 +48,25 @@ public class ProductsController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(ProductModel product)
     {
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
+        {
+            await _logic.GetAvailableCategories(product);
+            return View(product);
+        }
+        try
         {
             await _logic.AddNewProduct(product);
             return RedirectToAction(nameof(Index));
         }
+        catch(ValidationException valExec)
+        {
+            var results = new ValidationResult(valExec.Errors);
+            results.AddToModelState(ModelState, null);
+            await _logic.GetAvailableCategories(product);
+            return View(product);
+        }
 
-        return View(product);
+        
     }
 
     // GET: ProductsData/Edit/3
