@@ -12,13 +12,13 @@ namespace CarvedRock.Admin.Controllers;
 public class ProductsController : Controller
 {
     private readonly ILogger<ProductsController> _logger;
-    private readonly IProductLogic _logic;    
+    private readonly IProductLogic _logic;
 
     public ProductsController(IProductLogic logic, ILogger<ProductsController> logger)
-    {        
+    {
         _logic = logic;
         _logger = logger;
-    }    
+    }
 
     public async Task<IActionResult> Index()
     {
@@ -29,14 +29,14 @@ public class ProductsController : Controller
     public async Task<IActionResult> Details(int id)
     {
         var product = await _logic.GetProductById(id);
-        if(product == null)
+        if (product == null)
         {
             _logger.LogInformation("Details not found for id {id}", id);
             return View("NotFound");
         }
         return View(product);
     }
-    
+
     public async Task<IActionResult> Create()
     {
         var model = await _logic.InitializeProductModel();
@@ -60,7 +60,7 @@ public class ProductsController : Controller
             await _logic.AddNewProduct(product);
             return RedirectToAction(nameof(Index));
         }
-        catch(ValidationException valExec)
+        catch (ValidationException valExec)
         {
             var results = new ValidationResult(valExec.Errors);
             results.AddToModelState(ModelState, null);
@@ -68,7 +68,7 @@ public class ProductsController : Controller
             return View(product);
         }
 
-        
+
     }
 
     // GET: ProductsData/Edit/3
@@ -79,14 +79,14 @@ public class ProductsController : Controller
             _logger.LogInformation("No id passed for Edit");
             return View("NotFound");
         }
-        
+
         var productModel = await _logic.GetProductById(id.Value);
         if (productModel == null)
         {
-           _logger.LogInformation("Edit Details not found for id {id}", id);
+            _logger.LogInformation("Edit Details not found for id {id}", id);
             return View("NotFound");
         }
-        
+
         await _logic.GetAvailableCategories(productModel);
         return View(productModel);
     }
@@ -127,20 +127,6 @@ public class ProductsController : Controller
     {
         await _logic.RemoveProduct(id);
         return RedirectToAction(nameof(Index));
-    } 
+    }
 
-    // private List<ProductModel>? GetSampleProducts()
-    // {
-    //     return new List<ProductModel>
-    //     {
-    //         new ProductModel {Id = 1, Name = "Trailblazer", Price = 69.99M, IsActive = true,
-    //             Description = "Great support in this high-top to take you to great heights and trails." },
-    //         new ProductModel {Id = 2, Name = "Coastliner", Price = 49.99M, IsActive = true,
-    //             Description = "Easy in and out with this lightweight but rugged shoe with great ventilation to get your around shores, beaches, and boats."},
-    //         new ProductModel {Id = 3, Name = "Woodsman", Price = 64.99M, IsActive = true,
-    //             Description = "All the insulation and support you need when wandering the rugged trails of the woods and backcountry." },
-    //         new ProductModel {Id = 4, Name = "Basecamp", Price = 249.99M, IsActive = true,
-    //             Description = "Great insulation and plenty of room for 2 in this spacious but highly-portable tent."},
-    //     };
-    // }
 }
