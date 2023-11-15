@@ -3,10 +3,12 @@ using CarvedRock.Admin.Models;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarvedRock.Admin.Controllers;
 
+[Authorize]
 public class ProductsController : Controller
 {
     private readonly ILogger<ProductsController> _logger;
