@@ -19,6 +19,8 @@ This project is about building a web application for a fictional company named *
 * Repository classes are used with **Dependency Injection (DI)** for testability support.
 * Entity Product has a related entity, the Category, with navigation property.
 * **Bootstrap 5** is used for styling the web application.
+* Authentication is required to use Products and Categories.
+* **ASP.NET Identity** is used to create authentication by using the scaffolding feature: the sel-generations works very well with no initial users created.
 
 ## Documentation References
 
@@ -36,6 +38,9 @@ This project is about building a web application for a fictional company named *
   * [Database Providers](https://docs.microsoft.com/en-us/ef/core/providers/?tabs=dotnet-core-cli)
   * [Migrations](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations)
   * [Relationships](https://docs.microsoft.com/en-us/ef/core/modeling/relationships)
+* **Identity**
+  * [General Documentations](https://docs.microsoft.com/en-us/aspnet/core/security/?view=aspnetcore-8.0)
+  * [Scaffolding Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity)
   
   
 
