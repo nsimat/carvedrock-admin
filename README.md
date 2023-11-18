@@ -41,8 +41,3 @@ This project is about building a web application for a fictional company named *
 * **Identity**
   * [General Documentations](https://docs.microsoft.com/en-us/aspnet/core/security/?view=aspnetcore-8.0)
   * [Scaffolding Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity)
-  
-  
-
-
-
